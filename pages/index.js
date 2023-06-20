@@ -176,14 +176,22 @@ function ProxyApp() {
   }
 
   return (
-    <div className='container box m-auto max-w-4xl  rounded shadow flex flex-col items-center mt-20'>
-      <h1 className='text-2xl text-center font-bold mt-8'>Proxy App</h1>
+    <div className='container box m-auto max-w-4xl  rounded shadow flex flex-col items-center'>
+      <img
+        className='sm:w-[10vw] w-[20vw] h-auto mt-2'
+        src='./hk.png'
+        alt='logo'
+      />
+      <h1 className='sm:text-2xl text-lg text-center font-bold mb-4'>
+        Proxy App |
+        <span className='sm:text-2xl text-lg font-bold mb-2 text-center text-amber-500'>
+          {' '}
+          BATCH-5:
+        </span>
+      </h1>
 
       {proxies && (
         <div className='mt-6'>
-          <h2 className='text-xl font-bold mb-2 text-center text-amber-500'>
-            BATCH-5:
-          </h2>
           <div className='glass rounded p-2 w-[60vw] my-auto sm:mx-0 mx-10'>
             <textarea
               className='w-full scroll text-amber-500 rounded p-2.5 text-sm h-[40vh] focus:ring-blue-500 focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 resize-none'
