@@ -1,6 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap');
+
+:root {
+  --cr-orange: #f59f3c;
+  --cr-gray: #303c44;
+  --cr-selection-bg: #f59f3c;
+  --cr-selection-text: #d2d2d1;
+  --cr-background: #040505;
+
+  --font-size-xl: clamp(1.71rem, 1.2vw + 1.41rem, 2.37rem);
+  --font-size-xxl: clamp(2.14rem, 1.86vw + 1.67rem, 3.16rem);
+  --font-size-xxxl: clamp(2.67rem, 2.8vw + 1.97rem, 4.21rem);
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--cr-selection-bg);
+  color: var(--cr-selection-text);
+}
+
 body {
-  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
-    'Arial', sans-serif;
+  font-family: 'Andika', sans-serif;
   margin: 0 auto;
   font-size: 16px;
   line-height: 1.65;
@@ -11,4 +43,115 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   hyphens: auto;
+  background: url(/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #222;
+  background-position: center center;
+  color: #fff;
+  height: 100%;
 }
+
+/* .box {
+  background: url(/bg.jpg);
+  background-size: cover;
+}
+ */
+.scroll::-webkit-scrollbar {
+  width: 20px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background-color: var(--cr-gray);
+  border-radius: 0px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  height: 50px;
+  border-radius: 100px;
+  border: 5px solid transparent;
+  background-clip: content-box;
+  background-color: var(--cr-orange);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+  font-size: var(--font-size-xxxl);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: var(--font-size-xxl);
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+  line-height: 1.1;
+}
+
+p {
+  font-size: clamp(1.035rem, calc(12px + 0.54vw), 1.125rem);
+  line-height: 1.4;
+  color: #d2d2d1;
+}
+
+span {
+  color: var(--cr-orange);
+}
+
+.copy {
+    position: fixed;
+    right: 6px;
+    bottom: 14px;
+    width: 30px;
+    cursor: pointer;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+/* 
+@media (max-width: 767px) {
+  .box {
+    background-image: none;
+  }
+} */
