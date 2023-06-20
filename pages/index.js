@@ -288,7 +288,7 @@ function ProxyApp() {
       )}
       <a
         className='text-center flex items-center gap-1 my-auto justify-end'
-        href='https://t.me/@simanta03'
+        href='https://t.me/simanta03'
         target='_blank'
       >
         <svg
