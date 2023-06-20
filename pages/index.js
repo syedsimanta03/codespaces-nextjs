@@ -290,7 +290,6 @@ function ProxyApp() {
         className='text-center flex items-center gap-1 my-auto justify-end'
         href='t.me/@simanta03'
         target='_blank'
-        rel='noopener noreferrer'
       >
         <svg
           className='w-10 h-10'
