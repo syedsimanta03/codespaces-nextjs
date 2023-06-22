@@ -177,11 +177,13 @@ function ProxyApp() {
 
   return (
     <div className='container box m-auto max-w-4xl  rounded shadow flex flex-col items-center'>
-      <img
-        className='sm:w-[10vw] w-[20vw] h-auto mt-2'
-        src='./hk.png'
-        alt='logo'
-      />
+      <a href='/'>
+        <img
+          className='sm:w-[10vw] w-[20vw] h-auto mt-2'
+          src='./hk.png'
+          alt='logo'
+        />
+      </a>
       <h1 className='sm:text-2xl text-lg text-center font-bold mb-4'>
         Proxy App |
         <span className='sm:text-2xl text-lg font-bold mb-2 text-center text-amber-500'>
@@ -189,6 +191,14 @@ function ProxyApp() {
           BATCH-5:
         </span>
       </h1>
+      {/* use flex instead hidden */}
+      <ul className='hidden'>
+        <li className='mr-6'>
+          <a className='text-gray-400 hover:text-blue-800' href='/backlink'>
+            Backlink Tool
+          </a>
+        </li>
+      </ul>
 
       {proxies && (
         <div className='mt-6'>
