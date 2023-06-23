@@ -18,8 +18,8 @@ const BacklinkFetcher = () => {
   const fetchBacklinks = async (startIndex, accumulatedBacklinks) => {
     try {
       setIsLoading(true)
-      const cx = 'a74e7447fa38840d0' // Replace with your Custom Search Engine CX ID
-      const apiKey = 'AIzaSyCVX0cCbEZErQ6O2SSCd7caFQs_H9fDNQI' // Replace with your Google Custom Search API key
+      const cx =  process.env.GOOGLE_CX // Replace with your Custom Search Engine CX ID
+      const apiKey = process.env.GOOGLE_API // Replace with your Google Custom Search API key
 
       const response = await axios.get(
         `https://www.googleapis.com/customsearch/v1?q=${keyword}&cx=${cx}&key=${apiKey}&start=${startIndex}&num=10`
