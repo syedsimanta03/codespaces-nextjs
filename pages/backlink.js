@@ -9,7 +9,7 @@ const BacklinkFetcher = () => {
   const [isCopied, setIsCopied] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
-  const links = 100;
+  const links = 1000;
 
   const handleKeywordChange = (event) => {
     setKeyword(event.target.value)
@@ -156,7 +156,7 @@ const BacklinkFetcher = () => {
         )}
         {backlinks.length === links && (
           <p className='flex items-center place-content-center text-lime-600 text-center mx-auto w-full'>
-            👍All Backlinks Fteched!...
+            👍All Backlinks Fetched!...
           </p>
         )}
         {/*Work logic */}
