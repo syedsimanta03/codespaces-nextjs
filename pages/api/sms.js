@@ -2,8 +2,8 @@ import twilio from 'twilio'
 
 export default async function handler(req, res) {
   const client = twilio(
-    process.env.TWILIO_ACCOUNT_SID,
-    process.env.TWILIO_AUTH_TOKEN
+    process.env.NEXT_PUBLIC_TWILIO_ACCOUNT_SID,
+    process.env.NEXT_PUBLIC_TWILIO_AUTH_TOKEN
   )
   
 
