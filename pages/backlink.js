@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { saveAs } from 'file-saver'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+ 
+
 
 const BacklinkFetcher = () => {
   const [keyword, setKeyword] = useState('')
@@ -19,9 +21,9 @@ const BacklinkFetcher = () => {
   const fetchBacklinks = async (startIndex, accumulatedBacklinks) => {
     try {
       setIsLoading(true)
-      const cx = `${process.env.REACT_APP_GOOGLE_CX}` // Replace with your Custom Search Engine CX ID
+      const cx = `${process.env.NEXT_PUBLIC_GOOGLE_CX}` // Replace with your Custom Search Engine CX ID
       console.log(cx)
-      const apiKey = `${process.env.REACT_APP_GOOGLE_API}` // Replace with your Google Custom Search API key
+      const apiKey = `${process.env.NEXT_PUBLIC_GOOGLE_API}` // Replace with your Google Custom Search API key
 
       const response = await axios.get(
         `https://www.googleapis.com/customsearch/v1?q=${keyword}&cx=${cx}&key=${apiKey}&start=${startIndex}&num=10`
@@ -72,7 +74,7 @@ const BacklinkFetcher = () => {
   }, [backlinks])
 
   return (
-    <div className='max-w-[80%] mx-auto'>
+    <div className='max-w-[80%] h-[90vh] mx-auto'>
       <a href='/'>
         <img
           className='sm:w-[10vw] w-[20vw] h-auto mt-2 text-center mx-auto'
@@ -201,7 +203,7 @@ const BacklinkFetcher = () => {
             </div>
           </>
         ) : (
-            /* can be a text */
+          /* can be a text */
           <p></p>
         )}
       </div>

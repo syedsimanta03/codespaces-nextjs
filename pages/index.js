@@ -179,8 +179,7 @@ function ProxyApp() {
 
   return (
     <>
-
-      <div className='container box m-auto max-w-4xl  rounded shadow flex flex-col items-center'>
+      <div className='container h-[90vh]  box m-auto max-w-4xl  rounded shadow flex flex-col items-center'>
         <a href='/'>
           <img
             className='sm:w-[10vw] w-[20vw] h-auto mt-2'
