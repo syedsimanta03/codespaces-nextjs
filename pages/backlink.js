@@ -9,7 +9,8 @@ const BacklinkFetcher = () => {
   const [isCopied, setIsCopied] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
-  const links = 1000;
+
+  const links = 10;
 
   const handleKeywordChange = (event) => {
     setKeyword(event.target.value)
@@ -18,8 +19,9 @@ const BacklinkFetcher = () => {
   const fetchBacklinks = async (startIndex, accumulatedBacklinks) => {
     try {
       setIsLoading(true)
-      const cx =  process.env.GOOGLE_CX // Replace with your Custom Search Engine CX ID
-      const apiKey = process.env.GOOGLE_API // Replace with your Google Custom Search API key
+      const cx = `${process.env.REACT_APP_GOOGLE_CX}` // Replace with your Custom Search Engine CX ID
+      console.log(cx)
+      const apiKey = `${process.env.REACT_APP_GOOGLE_API}` // Replace with your Google Custom Search API key
 
       const response = await axios.get(
         `https://www.googleapis.com/customsearch/v1?q=${keyword}&cx=${cx}&key=${apiKey}&start=${startIndex}&num=10`
@@ -89,7 +91,7 @@ const BacklinkFetcher = () => {
         </li>
       </ul>
       <div className='mb-4'>
-        <div className='max-w-[50%] mx-auto'>
+        <div className='max-w-[600px] mx-auto'>
           <label
             htmlFor='default-search'
             className='mb-2 text-sm font-medium text-white'
@@ -116,8 +118,8 @@ const BacklinkFetcher = () => {
               type='text'
               value={keyword}
               onChange={handleKeywordChange}
-              className='block w-full p-4 pl-10 text-sm  border  rounded-lg bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500'
-              placeholder='Type Keyword :)'
+              className='relative w-full p-4 pl-10 text-sm  border  rounded-lg bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500'
+              placeholder='Keyword...'
               required
             />
             <button

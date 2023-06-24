@@ -15,6 +15,14 @@ const Home = () => {
     setType('gray')
   }
 
+  const phoneNumber = '4846737746'
+  const hiddenDigits = phoneNumber.slice(-2)
+  const maskedNumber = hiddenDigits.replace(/\d/g, '*')
+  const lastTwoDigits = phoneNumber.slice(2)
+  const maskedPhoneNumber = maskedNumber + lastTwoDigits
+
+  console.log(maskedPhoneNumber)
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setTime(new Date())
@@ -73,9 +81,9 @@ const Home = () => {
   return (
     <>
       {isCopied && <Alert message={message} type={type} />}
-      <div className='w-full overflow-clip sm:overflow-y-auto bg-white text-white'>
+      <div className='w-full overflow-clip sm:overflow-auto bg-white text-white'>
         {/* mobile */}
-        <div className='w-[100vw] h-[90vh] bg-gray-800 rounded-bl-[50px] rounded-br-[50px] flex flex-col justify-between'>
+        <div className='h-[90vh] shadow-lg bg-gray-800 rounded-bl-[50px] rounded-br-[50px] flex flex-col justify-between'>
           {/* Bar */}
           <div className='flex justify-between px-4 pt-2 w-full'>
             <p className='text-[13px] font-bold'>{formattedTime}</p>
@@ -87,10 +95,15 @@ const Home = () => {
             src='/robot.svg'
             alt='bar'
           />
+
+          <div className='my-2 text-center font-bold flex justify-center items-center'>
+            <span className='animate-ping h-4 w-4 rounded-full bg-green-500 opacity-90  mr-2'></span>
+            Active Number: <span className='text-lime-500'>&nbsp;{maskedPhoneNumber}</span>
+          </div>
           {/* Body text */}
           <p className='text-center p-4'>{smsBody}</p>
           {error && (
-            <div className='bg-red-500 text-white p-4 mt-4'>
+            <div className='bg-red-500 text-center font-bold text-white p-4 mt-4'>
               <p>{error}</p>
             </div>
           )}

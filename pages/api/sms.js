@@ -2,9 +2,10 @@ import twilio from 'twilio'
 
 export default async function handler(req, res) {
   const client = twilio(
-    process.env.TWILIO_ACCOUNT_SID,
-    process.env.TWILIO_AUTH_TOKEN
+    process.env.REACT_APP_TWILIO_ACCOUNT_SID,
+    process.env.REACT_APP_TWILIO_AUTH_TOKEN
   )
+  
 
   const messages = await client.messages.list({ limit: 1 })
   const sms = messages[0]
