@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import axios from 'axios'
 import Alert from '../components/Alert'
+import Navbar from '../components/Navbar'
 
 
 function ProxyApp() {
@@ -194,15 +195,8 @@ function ProxyApp() {
             BATCH-5:
           </span>
         </h1>
-        {/* use flex instead hidden */}
-        <ul className='hidden'>
-          <li className='mr-6'>
-            <a className='text-gray-400 hover:text-blue-800' href='/backlink'>
-              Backlink Tool
-            </a>
-          </li>
-        </ul>
-
+        {/* Navbar*/}
+        <Navbar />
         {proxies && (
           <div className='mt-6'>
             <div className='glass rounded p-2 w-[60vw] my-auto sm:mx-0 mx-10'>

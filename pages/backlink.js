@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { saveAs } from 'file-saver'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import Navbar from '../components/Navbar'
  
 
 
@@ -12,7 +13,7 @@ const BacklinkFetcher = () => {
   const [isLoading, setIsLoading] = useState(false)
 
 
-  const links = 10;
+  const links = 100;
 
   const handleKeywordChange = (event) => {
     setKeyword(event.target.value)
@@ -85,13 +86,7 @@ const BacklinkFetcher = () => {
       <h1 className='sm:text-2xl text-lg text-center font-bold mb-2'>
         𝔹𝕒𝕔𝕜𝕝𝕚𝕟𝕜 𝔾𝕖𝕟𝕖𝕣𝕒𝕥𝕠𝕣
       </h1>
-      <ul className='flex justify-center'>
-        <li className='mr-6'>
-          <a className='text-gray-400 hover:text-blue-800' href='/backlink'>
-            Proxy Tool
-          </a>
-        </li>
-      </ul>
+      <Navbar />
       <div className='mb-4'>
         <div className='max-w-[600px] mx-auto'>
           <label
