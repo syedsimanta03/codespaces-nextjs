@@ -103,12 +103,11 @@ const Home = () => {
             <img className='w-12 mr-4' src='/bar.svg' alt='bar' />
           </div>
           {/* Robot */}
-          <img
-            className='w-full sm:w-[30%] mx-8 text-center sm:mx-auto'
-            src='/robot.svg'
-            alt='bar'
-          />
-
+            <img
+              className='w-full sm:w-[30%] mx-8 text-center sm:mx-auto'
+              src='/robot.svg'
+              alt='bar'
+            />
           <div className='my-2 text-center font-bold flex justify-center items-center'>
             <span className='animate-ping h-3 w-3 -mt-2 rounded-full bg-green-500 opacity-90  mr-2'></span>
             Active Number:{' '}
