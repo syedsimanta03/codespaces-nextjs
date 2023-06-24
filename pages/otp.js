@@ -10,6 +10,19 @@ const Home = () => {
   const [message, setMessage] = useState('')
   const [type, setType] = useState('')
 
+  const [passwordCorrect, setPasswordCorrect] = useState(null)
+
+  const handleClick = () => {
+    const password = prompt('Please enter the password:')
+
+    if (password === '48') {
+      setPasswordCorrect(true)
+      fetchSms()
+    } else {
+      setPasswordCorrect(false)
+    }
+  }
+
   const handleAlert = () => {
     setMessage('👍OPT Copied!')
     setType('gray')
@@ -98,10 +111,16 @@ const Home = () => {
 
           <div className='my-2 text-center font-bold flex justify-center items-center'>
             <span className='animate-ping h-3 w-3 -mt-2 rounded-full bg-green-500 opacity-90  mr-2'></span>
-            Active Number: <span className='text-lime-500'>&nbsp;{maskedPhoneNumber}</span>
+            Active Number:{' '}
+            <span className='text-lime-500'>&nbsp;{maskedPhoneNumber}</span>
           </div>
           {/* Body text */}
           <p className='text-center p-4'>{smsBody}</p>
+          {passwordCorrect === false && (
+            <p className='bg-red-500 text-center font-bold text-white p-4 mt-4'>
+              🤣Password is incorrect!
+            </p>
+          )}
           {error && (
             <div className='bg-red-500 text-center font-bold text-white p-4 mt-4'>
               <p>{error}</p>
@@ -122,7 +141,7 @@ const Home = () => {
           {!smsOtp && (
             <button
               className='mx-auto mb-10 text-center w-[130px] text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none shadow-md shadow-blue-600 focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5'
-              onClick={fetchSms}
+              onClick={handleClick}
             >
               📩My OTP!
             </button>
