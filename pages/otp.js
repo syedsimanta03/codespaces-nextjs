@@ -83,7 +83,7 @@ const Home = () => {
       {isCopied && <Alert message={message} type={type} />}
       <div className='w-full overflow-clip sm:overflow-auto bg-white text-white'>
         {/* mobile */}
-        <div className='h-[90vh] shadow-lg bg-gray-800 rounded-bl-[50px] rounded-br-[50px] flex flex-col justify-between'>
+        <div className='shadow-lg h-[89vh] bg-gray-800 rounded-bl-[50px] rounded-br-[50px] flex flex-col justify-between'>
           {/* Bar */}
           <div className='flex justify-between px-4 pt-2 w-full'>
             <p className='text-[13px] font-bold'>{formattedTime}</p>
@@ -91,13 +91,13 @@ const Home = () => {
           </div>
           {/* Robot */}
           <img
-            className='w-full sm:w-[50%] mx-8 text-center sm:mx-auto'
+            className='w-full sm:w-[30%] mx-8 text-center sm:mx-auto'
             src='/robot.svg'
             alt='bar'
           />
 
           <div className='my-2 text-center font-bold flex justify-center items-center'>
-            <span className='animate-ping h-4 w-4 rounded-full bg-green-500 opacity-90  mr-2'></span>
+            <span className='animate-ping h-3 w-3 -mt-2 rounded-full bg-green-500 opacity-90  mr-2'></span>
             Active Number: <span className='text-lime-500'>&nbsp;{maskedPhoneNumber}</span>
           </div>
           {/* Body text */}
