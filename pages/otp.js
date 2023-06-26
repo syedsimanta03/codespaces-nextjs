@@ -10,7 +10,7 @@ const Home = () => {
   const [message, setMessage] = useState('')
   const [type, setType] = useState('')
 
-  const [passwordCorrect, setPasswordCorrect] = useState(null)
+  const [passwordCorrect, setPasswordCorrect] = useState(true)
 
   const handleClick = () => {
     const password = prompt('Please enter the password:')
