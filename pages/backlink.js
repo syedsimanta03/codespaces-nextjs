@@ -13,7 +13,7 @@ const BacklinkFetcher = () => {
   const [isLoading, setIsLoading] = useState(false)
 
 
-  const links = 100;
+  const links = 10;
 
   const handleKeywordChange = (event) => {
     setKeyword(event.target.value)
