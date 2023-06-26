@@ -1,10 +1,9 @@
 import twilio from 'twilio'
-console.log(process.env.T_ACCOUNT_SID)
-console.log(process.env.T_AUTH_TOKEN)
+//package not taking env variables
 export default async function handler(req, res) {
   const client = twilio(
-    process.env.T_ACCOUNT_SID,
-    process.env.T_AUTH_TOKEN
+    'ACcf49d743b4efa9b9796be98f4c02fb09',
+    '7733e12217ff94fb6e5caa3b573a55ce'
   )
   
 
